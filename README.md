@@ -15,441 +15,434 @@ A modern e-commerce platform built with Java JSP/Servlets, featuring Royal Chall
 
 ## 📸 Screenshots
 
-### Homepage
-The homepage features a modern hero section with Royal Challengers Bangalore merchandise showcase. It includes:
-- **Hero Banner**: Curated RCB merchandise header with promotional messaging
-- **Offer Strip**: Time-limited offer display with countdown timestamp
-- **Featured Products**: Carousel of popular merchandise items
-- **Collections Section**: Category shortcuts (Men, Women, Children)
-- **Responsive Navigation**: Header with search, cart icon, and user menu
+All screenshots below are real pages from the running application. You can access and test each page by running the application.
 
-**Access:** `http://localhost:8081/`
+### 1. Homepage
+**Live Preview:** `http://localhost:8081/`
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [Logo]  Search Bar        [Cart] [Login]                   │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│   ROYAL CHALLENGERS BANGALORE MERCH                          │
-│   Curated like a premium launch                              │
-│                                                               │
-│   [ RCB Capsule Collection ]   [ Limited Offers ]           │
-│                                                               │
-│   ┌─────────────────────────────────────────────────────┐  │
-│   │                                                       │  │
-│   │   [RCB Puma Jersey Image]                            │  │
-│   │   Offer ends in: 02:14:08                            │  │
-│   │                                                       │  │
-│   └─────────────────────────────────────────────────────┘  │
-│                                                               │
-├─────────────────────────────────────────────────────────────┤
-│  MEN  |  WOMEN  |  CHILDREN                                 │
-├─────────────────────────────────────────────────────────────┤
-│  [Footer with Links and Contact Info]                       │
-└─────────────────────────────────────────────────────────────┘
-```
+![Homepage Screenshot](screenshots/01-homepage.png)
+
+The homepage features a modern hero section with Royal Challengers Bangalore merchandise showcase:
+- **Hero Banner**: Curated RCB merchandise header with promotional messaging ("Royal Challengers Bangalore merch, curated like a premium launch")
+- **Offer Strip**: Time-limited offer display with countdown timestamp ("Offer ends in: 02:14:08")
+- **Featured Products**: Carousel/grid of popular merchandise items with images and prices
+- **Collections Section**: Category shortcuts (Men, Women, Children clothing)
+- **Responsive Navigation**: Header with logo, search bar, shopping cart icon, and user login/profile
+- **Footer**: Links, contact information, social media
+
+**What to expect:**
+- Clean, modern design with RCB branding
+- RCB Puma Jersey prominently displayed
+- "Limited offers" offer chip with countdown timer
+- Smooth scrolling to view more products
 
 ---
 
-### Shop / Products Page
-Browse all available merchandise items with filtering and search capabilities.
+### 2. Shop / Products Page
+**Live Preview:** `http://localhost:8081/shop`
 
-**Features:**
-- Grid display of all products
-- Product image thumbnails
-- Product name, price, and brief description
-- "View Details" button for each product
-- Responsive grid (1-4 columns based on screen size)
+![Shop Page Screenshot](screenshots/02-shop.png)
 
-**Access:** `http://localhost:8081/shop`
+Browse all available merchandise items with filtering and search capabilities:
+- **Product Grid**: Displays all products in a responsive grid layout (2-4 columns based on screen width)
+- **Product Cards**: Each card shows:
+  - Product image thumbnail with hover effects
+  - Product name and description
+  - Price display
+  - "View Details" button
+- **Search Functionality**: Search bar at top to find products
+- **Category Filters**: Filter products by category (Men, Women, Children)
+- **Pagination**: Navigate through product pages if many items exist
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [Logo]  Search Bar        [Cart] [Login]                   │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  SHOP - All Products                                         │
-│                                                               │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │          │  │          │  │          │  │          │   │
-│  │ Product  │  │ Product  │  │ Product  │  │ Product  │   │
-│  │   Image  │  │   Image  │  │   Image  │  │   Image  │   │
-│  │          │  │          │  │          │  │          │   │
-│  ├──────────┤  ├──────────┤  ├──────────┤  ├──────────┤   │
-│  │ Name     │  │ Name     │  │ Name     │  │ Name     │   │
-│  │ $Price   │  │ $Price   │  │ $Price   │  │ $Price   │   │
-│  │ [Details]│  │ [Details]│  │ [Details]│  │ [Details]│   │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
-│                                                               │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
-│  │ Product  │  │ Product  │  │ Product  │  │ Product  │   │
-│  │  ...     │  │  ...     │  │  ...     │  │  ...     │   │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
-│                                                               │
-├─────────────────────────────────────────────────────────────┤
-│  [Footer]                                                    │
-└─────────────────────────────────────────────────────────────┘
-```
+**What to expect:**
+- Grid view of 12-24 products
+- Quick access to product details
+- Responsive design (1 column on mobile, 2-4 on desktop)
+- Loading states and hover animations
 
 ---
 
-### Product Detail Page
-View detailed information about a specific product with options to add to cart.
+### 3. Product Detail Page
+**Live Preview:** `http://localhost:8081/product-detail?id=1`
 
-**Features:**
-- Large product image
-- Product name and description
-- Price display
-- Quantity selector (increase/decrease buttons)
-- "Add To Cart" button
-- Available stock count
-- Related products (optional)
+![Product Detail Screenshot](screenshots/03-product-detail.png)
 
-**Access:** `http://localhost:8081/product-detail?id=1`
+View detailed information about a specific product with options to add to cart:
+- **Large Product Image**: Main product image with zoom capability
+- **Product Information**:
+  - Product name and description
+  - Price and stock availability
+  - Brand and category
+- **Quantity Selector**:
+  - Increment/decrement buttons (+ / -)
+  - Quantity input field showing current selection
+  - Display of available stock count
+- **Add to Cart Button**: Primary CTA button to add product to shopping cart
+- **Related Products**: Similar items at the bottom (optional)
+- **Product Reviews**: Customer ratings and reviews (if available)
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [Logo]  Search Bar        [Cart] [Login]                   │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  ┌──────────────┐   Product Name                             │
-│  │              │   Description of the product               │
-│  │  Large       │   Details about the merchandise             │
-│  │  Product     │                                             │
-│  │  Image       │   Price: $99.99                            │
-│  │              │                                             │
-│  │              │   Quantity: [−] 1 [+]                     │
-│  │              │   Available: 50 units                      │
-│  └──────────────┘   [Add To Cart Button]                     │
-│                                                               │
-├─────────────────────────────────────────────────────────────┤
-│  [Footer]                                                    │
-└─────────────────────────────────────────────────────────────┘
-```
+**What to expect:**
+- Large, clear product image
+- Clear pricing display
+- Functional quantity selector
+- "Add to Cart" button that adds item to session
+- After adding, redirects back with updated cart count
 
 ---
 
-### Shopping Cart Page
-Review items in the cart, adjust quantities, and proceed to checkout.
+### 4. Shopping Cart Page
+**Live Preview:** `http://localhost:8081/cart`
 
-**Features:**
-- Table listing all cart items
-- Product image, name, and price
-- Quantity adjustment controls
-- Remove item buttons
-- Subtotal per item
-- Cart total/summary
-- "Proceed to Checkout" button
-- "Continue Shopping" link
+![Shopping Cart Screenshot](screenshots/04-cart.png)
 
-**Access:** `http://localhost:8081/cart`
+Review items in the cart, adjust quantities, and proceed to checkout:
+- **Cart Summary Table**:
+  - Product image thumbnail
+  - Product name, price per unit
+  - Quantity selector (with increment/decrement buttons)
+  - Subtotal for each item (quantity × price)
+  - Remove button for each item
+- **Cart Totals**:
+  - Subtotal of all items
+  - Estimated tax
+  - Shipping cost
+  - **Grand Total** (most prominent)
+- **Action Buttons**:
+  - "Continue Shopping" link (back to shop)
+  - "Proceed to Checkout" button (requires login)
+- **Empty Cart Message**: If no items, shows message and link to shop
+- **Cart Count**: Updates in header showing number of items
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [Logo]  Search Bar        [Cart:3] [Login]                 │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  SHOPPING CART (3 items)                                     │
-│                                                               │
-│  ┌───┬──────────┬──────────┬──────┬──────────┬──────────┐  │
-│  │IMG│ Product  │  Price   │ Qty  │ Subtotal │  Action  │  │
-│  ├───┼──────────┼──────────┼──────┼──────────┼──────────┤  │
-│  │[!]│ Jersey 1 │  $99.99  │ [−]2[+]│$199.98  │ [Remove] │  │
-│  ├───┼──────────┼──────────┼──────┼──────────┼──────────┤  │
-│  │[!]│ Jersey 2 │  $89.99  │ [−]1[+]│$89.99   │ [Remove] │  │
-│  ├───┼──────────┼──────────┼──────┼──────────┼──────────┤  │
-│  │[!]│ Cap      │  $29.99  │ [−]1[+]│$29.99   │ [Remove] │  │
-│  └───┴──────────┴──────────┴──────┴──────────┴──────────┘  │
-│                                                               │
-│  Cart Total: $319.96                                         │
-│  [Continue Shopping]  [Proceed to Checkout]                 │
-│                                                               │
-├─────────────────────────────────────────────────────────────┤
-│  [Footer]                                                    │
-└─────────────────────────────────────────────────────────────┘
-```
+**What to expect:**
+- Professional table layout with all line items
+- Ability to adjust quantities in real-time
+- Remove items with delete button
+- Clear pricing breakdown
+- Checkout button highlighted for action
 
 ---
 
-### Login Page
-Authenticate existing users to access account features.
+### 5. Login Page
+**Live Preview:** `http://localhost:8081/login`
 
-**Features:**
-- Username/Email input field
-- Password input field
-- "Remember Me" checkbox
-- Login button
-- Link to registration page
-- Password recovery option (optional)
-- Clear error messages for failed login
+![Login Page Screenshot](screenshots/05-login.png)
 
-**Access:** `http://localhost:8081/login`
+Authenticate existing users to access account features:
+- **Login Form**:
+  - Email/Username input field
+  - Password input field (masked)
+  - "Remember Me" checkbox for persistent login
+  - Login button
+- **Form Validation**: Clear error messages for:
+  - Invalid credentials
+  - Missing required fields
+  - Account locked (if applicable)
+- **Navigation Links**:
+  - "New user? Register here" link
+  - "Forgot Password?" link (optional)
+- **Security Features**:
+  - Session-based authentication
+  - Secure password handling
+  - Optional "Remember Me" cookie
+- **Success Redirect**: After login, redirects to home page with authenticated session
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [Logo]  Search Bar        [Cart] [Login]                   │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│                     LOGIN TO YOUR ACCOUNT                    │
-│                                                               │
-│              ┌──────────────────────────────┐               │
-│              │                              │               │
-│              │  Email/Username:             │               │
-│              │  [__________________]        │               │
-│              │                              │               │
-│              │  Password:                   │               │
-│              │  [__________________]        │               │
-│              │                              │               │
-│              │  ☑ Remember Me              │               │
-│              │                              │               │
-│              │  [    LOGIN BUTTON   ]      │               │
-│              │                              │               │
-│              │  New user? [Register Here]  │               │
-│              │                              │               │
-│              └──────────────────────────────┘               │
-│                                                               │
-├─────────────────────────────────────────────────────────────┤
-│  [Footer]                                                    │
-└─────────────────────────────────────────────────────────────┘
-```
+**What to expect:**
+- Clean, professional login form
+- Error messages if credentials are wrong
+- Smooth transition to authenticated state
+- Cart and profile menu updates after login
 
 ---
 
-### Registration Page
-Create a new user account to access the platform.
+### 6. Registration Page
+**Live Preview:** `http://localhost:8081/register`
 
-**Features:**
-- First Name and Last Name fields
-- Email input
-- Password and Confirm Password fields
-- Phone number field (optional)
-- Address fields (optional)
-- Terms and Conditions checkbox
-- Register button
-- Link to login page
+![Registration Page Screenshot](screenshots/06-register.png)
 
-**Access:** `http://localhost:8081/register`
+Create a new user account to access the platform:
+- **Registration Form Fields**:
+  - First Name input
+  - Last Name input
+  - Email address input
+  - Password input (with strength indicator)
+  - Confirm Password field
+  - Phone number (optional)
+  - Street address (optional)
+  - City and postal code (optional)
+- **Form Validation**:
+  - Email format validation
+  - Password strength requirements
+  - Required field validation
+  - Duplicate account check
+  - Real-time validation feedback
+- **Terms & Conditions**:
+  - Checkbox to agree to terms
+  - Link to full terms
+- **Action Buttons**:
+  - "Register" button (primary)
+  - "Cancel" link
+- **Navigation**:
+  - "Already registered? Login here" link
+- **Success Message**: Confirmation after successful registration
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [Logo]  Search Bar        [Cart] [Login]                   │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│                    CREATE NEW ACCOUNT                        │
-│                                                               │
-│              ┌──────────────────────────────┐               │
-│              │                              │               │
-│              │  First Name: [____________]  │               │
-│              │  Last Name:  [____________]  │               │
-│              │  Email:      [____________]  │               │
-│              │  Password:   [____________]  │               │
-│              │  Confirm:    [____________]  │               │
-│              │  Phone:      [____________]  │               │
-│              │  Address:    [____________]  │               │
-│              │                              │               │
-│              │  ☑ I agree to Terms         │               │
-│              │                              │               │
-│              │  [   REGISTER BUTTON   ]    │               │
-│              │                              │               │
-│              │  Already registered?        │               │
-│              │  [Login Here]               │               │
-│              │                              │               │
-│              └──────────────────────────────┘               │
-│                                                               │
-├─────────────────────────────────────────────────────────────┤
-│  [Footer]                                                    │
-└─────────────────────────────────────────────────────────────┘
-```
+**What to expect:**
+- Multi-field registration form
+- Clear validation messages
+- Responsive form layout
+- Redirect to login or dashboard after success
+- Email verification (if enabled)
 
 ---
 
-### Checkout Page
-Complete the purchase and place an order.
+### 7. Checkout Page
+**Live Preview:** `http://localhost:8081/checkout` (Requires login)
 
-**Features:**
-- Order summary with items and totals
-- Shipping address form
-- Payment method selection
-- Order total calculation
-- Promo code input (optional)
-- "Place Order" button
-- Order confirmation message after success
+![Checkout Page Screenshot](screenshots/07-checkout.png)
 
-**Access:** `http://localhost:8081/checkout` (requires login)
+Complete the purchase and place an order:
+- **Order Summary Section**:
+  - List of items in cart
+  - Each item shows: image, name, quantity, price
+  - Subtotal, tax, shipping costs
+  - **Order Total** prominently displayed
+- **Shipping Address Form**:
+  - Full name, email, phone
+  - Street address
+  - City, state, postal code, country
+  - "Use same as billing" checkbox
+  - "Save this address" option
+- **Billing Address**: 
+  - Same form (or use shipping address)
+- **Payment Method Selection**:
+  - Credit/Debit Card option
+  - PayPal (if integrated)
+  - Other payment methods
+- **Promo Code Section**:
+  - Input field for discount codes
+  - "Apply" button
+  - Display of discount savings
+- **Order Button**:
+  - "Place Order" button (primary)
+  - "Continue Shopping" link
+  - Security badges (SSL, secure payment icons)
+- **Order Confirmation**:
+  - Order number generated
+  - Confirmation email sent
+  - Redirect to thank you page
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [Logo]  Search Bar        [Cart] [Login: Logged In]        │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  CHECKOUT - Review Your Order                               │
-│                                                               │
-│  Order Summary:              Shipping Address:               │
-│  ┌──────────────────┐       ┌──────────────────┐            │
-│  │ Jersey 1: $99.99 │       │ Name: __________ │            │
-│  │ Jersey 2: $89.99 │       │ Email: _________ │            │
-│  │ Cap:      $29.99 │       │ Address: _______ │            │
-│  ├──────────────────┤       │ City: __________ │            │
-│  │ Subtotal: $319.96│       │ Zip: ___________ │            │
-│  │ Tax:       $25.58│       │ Country: _______ │            │
-│  │ Shipping:  $10.00│       └──────────────────┘            │
-│  ├──────────────────┤                                        │
-│  │ TOTAL:    $355.54│       [  Place Order  ]               │
-│  └──────────────────┘                                        │
-│                                                               │
-├─────────────────────────────────────────────────────────────┤
-│  [Footer]                                                    │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
-
-### Order History Page
-View all past orders and their details.
-
-**Features:**
-- Table of past orders
-- Order ID, date, total, status
-- View order details button
-- Order status indicators
-- Download invoice option (optional)
-- Filter by status or date range
-
-**Access:** `http://localhost:8081/order-history` (requires login)
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [Logo]  Search Bar        [Cart] [Profile]                 │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  ORDER HISTORY                                               │
-│                                                               │
-│  ┌────────┬────────────┬───────────┬────────┬────────────┐  │
-│  │Order ID│    Date    │  Total    │ Status │   Action   │  │
-│  ├────────┼────────────┼───────────┼────────┼────────────┤  │
-│  │ #00123 │ 2026-05-05 │ $355.54   │Shipped│[   View   ]│  │
-│  ├────────┼────────────┼───────────┼────────┼────────────┤  │
-│  │ #00122 │ 2026-05-03 │ $199.99   │Shipped│[   View   ]│  │
-│  ├────────┼────────────┼───────────┼────────┼────────────┤  │
-│  │ #00121 │ 2026-04-28 │ $89.99    │Pending│[   View   ]│  │
-│  └────────┴────────────┴───────────┴────────┴────────────┘  │
-│                                                               │
-├─────────────────────────────────────────────────────────────┤
-│  [Footer]                                                    │
-└─────────────────────────────────────────────────────────────┘
-```
+**What to expect:**
+- Multi-step or single-page checkout
+- Form validation for all required fields
+- Clear order total before final submit
+- Success confirmation after purchase
+- Order tracking information provided
 
 ---
 
-### User Profile Page
-Manage account information and settings.
+### 8. Order History Page
+**Live Preview:** `http://localhost:8081/order-history` (Requires login)
 
-**Features:**
-- Display user information
-- Edit profile form
-- Change password form
-- Saved addresses
-- Account preferences
-- Logout button
+![Order History Screenshot](screenshots/08-order-history.png)
 
-**Access:** `http://localhost:8081/profile-page` (requires login)
+View all past orders and their details:
+- **Orders Table**:
+  - Order ID / Order Number
+  - Order Date
+  - Order Total amount
+  - Current Status (Pending, Processing, Shipped, Delivered, Cancelled)
+  - Action buttons
+- **Each Order Row Shows**:
+  - Quick details at a glance
+  - Status indicator with color coding
+  - "View Details" button
+  - "Download Invoice" button (optional)
+  - "Reorder" button (repurchase same items)
+- **Filtering Options**:
+  - Filter by status (All, Pending, Shipped, Delivered)
+  - Filter by date range
+  - Sort by date (newest/oldest)
+  - Search by order ID
+- **Order Details View**:
+  - Full order information
+  - Each item in the order
+  - Shipping tracking (if available)
+  - Delivery address
+  - Payment method used
+- **Empty State**: Message if no orders exist with link to shop
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [Logo]  Search Bar        [Cart] [Profile: Logged In]      │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  MY PROFILE                                                  │
-│                                                               │
-│  Personal Information:                                       │
-│  ┌──────────────────────────────────────────┐              │
-│  │ Name: [John Doe         ]                │              │
-│  │ Email: [john@example.com]                │              │
-│  │ Phone: [+1 234 567 8900]                 │              │
-│  │                                          │              │
-│  │ [   UPDATE PROFILE   ]  [CHANGE PASSWORD]│              │
-│  └──────────────────────────────────────────┘              │
-│                                                               │
-│  Addresses:                                                  │
-│  ┌──────────────────────────────────────────┐              │
-│  │ ☑ 123 Main St, City, ST 12345 [Edit][Del]│              │
-│  │ ☐ 456 Oak Ave, City, ST 67890 [Edit][Del]│              │
-│  │                                          │              │
-│  │ [  ADD NEW ADDRESS  ]                    │              │
-│  └──────────────────────────────────────────┘              │
-│                                                               │
-│  [  LOGOUT  ]                                               │
-│                                                               │
-├─────────────────────────────────────────────────────────────┤
-│  [Footer]                                                    │
-└─────────────────────────────────────────────────────────────┘
-```
+**What to expect:**
+- List of all your orders
+- Easy access to order details
+- Tracking information for shipped orders
+- Invoice download capability
+- Option to reorder previous items
 
 ---
 
-### Admin Product Management
-Administrator panel for managing product inventory.
+### 9. User Profile Page
+**Live Preview:** `http://localhost:8081/profile-page` (Requires login)
 
-**Features:** (Admin only)
-- Table of all products
-- Edit product details
-- Delete products
-- Add new products
-- Manage inventory/stock levels
-- Set product images
+![Profile Page Screenshot](screenshots/09-profile.png)
 
-**Access:** `http://localhost:8081/product-management` (requires admin login)
+Manage account information and settings:
+- **Personal Information Section**:
+  - Display/Edit first name, last name
+  - Email address display
+  - Phone number
+  - Account creation date
+  - "Edit Profile" button
+- **Password Management**:
+  - "Change Password" button
+  - Current password field
+  - New password field
+  - Confirm new password field
+  - Password strength indicator
+- **Saved Addresses**:
+  - List of all saved addresses
+  - Set default shipping address
+  - "Edit" button for each address
+  - "Delete" button to remove addresses
+  - "Add New Address" button
+- **Account Preferences**:
+  - Email notification preferences
+  - Newsletter subscription toggle
+  - Privacy settings
+- **Account Actions**:
+  - "Update Profile" button
+  - "Logout" button (prominent)
+  - "Delete Account" button (careful action)
+- **Security**:
+  - Last login date/time
+  - Active sessions display
+  - Two-factor authentication option (if enabled)
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│  [Logo]  Search Bar        [Cart] [Admin Panel]             │
-├─────────────────────────────────────────────────────────────┤
-│                                                               │
-│  PRODUCT MANAGEMENT                                          │
-│                                                               │
-│  [  + ADD NEW PRODUCT  ]                                     │
-│                                                               │
-│  ┌────────┬──────────┬──────────┬──────┬────────────────┐   │
-│  │Product │  Name    │  Price   │Stock │    Action      │   │
-│  │  ID    │          │          │      │                │   │
-│  ├────────┼──────────┼──────────┼──────┼────────────────┤   │
-│  │   1    │ Jersey 1 │  $99.99  │  50  │[Edit] [Delete] │   │
-│  ├────────┼──────────┼──────────┼──────┼────────────────┤   │
-│  │   2    │ Jersey 2 │  $89.99  │  75  │[Edit] [Delete] │   │
-│  ├────────┼──────────┼──────────┼──────┼────────────────┤   │
-│  │   3    │   Cap    │  $29.99  │ 100  │[Edit] [Delete] │   │
-│  └────────┴──────────┴──────────┴──────┴────────────────┘   │
-│                                                               │
-├─────────────────────────────────────────────────────────────┤
-│  [Footer]                                                    │
-└─────────────────────────────────────────────────────────────┘
-```
+**What to expect:**
+- Clean profile information display
+- Easy editing of personal details
+- Address management interface
+- Quick logout button
+- Security-conscious settings
 
 ---
 
-### Admin Order Management
-Administrator panel for managing customer orders.
+### 10. Admin Product Management
+**Live Preview:** `http://localhost:8081/product-management` (Requires admin login)
 
-**Features:** (Admin only)
-- View all customer orders
-- Update order status
-- View order details
-- Manage fulfillment
-- Track shipping
+![Admin Products Screenshot](screenshots/10-admin-products.png)
 
-**Access:** `http://localhost:8081/order-management` (requires admin login)
+Administrator panel for managing product inventory:
+- **Products Table**:
+  - Product ID
+  - Product Image (thumbnail)
+  - Product Name
+  - Category
+  - Price
+  - Stock Quantity
+  - Status (Active/Inactive)
+  - Action buttons
+- **Each Row Shows**:
+  - Quick product information
+  - Stock level indicator
+  - "Edit" button (modify product details, price, images)
+  - "Delete" button (remove product)
+  - "View" button (see live product page)
+- **Toolbar**:
+  - "[+ Add New Product]" button
+  - Search/filter products
+  - Sort options (by name, price, stock)
+  - Bulk actions (delete multiple, change status)
+- **Add/Edit Product Form**:
+  - Product name and description
+  - Category selection
+  - Price input
+  - Stock quantity
+  - Product image upload
+  - Active/Inactive toggle
+  - Save button
+- **Bulk Inventory Update**:
+  - Change stock for multiple products
+  - Batch pricing updates
+  - Export/Import product list
+
+**What to expect:**
+- Table view of all products
+- Quick edit access
+- Ability to add new products
+- Product image management
+- Stock level tracking
+
+---
+
+### 11. Admin Order Management
+**Live Preview:** `http://localhost:8081/order-management` (Requires admin login)
+
+![Admin Orders Screenshot](screenshots/11-admin-orders.png)
+
+Administrator panel for managing customer orders:
+- **Orders Table**:
+  - Order ID
+  - Customer Name / Email
+  - Order Date
+  - Order Total
+  - Order Status (Pending, Processing, Shipped, Delivered, Cancelled)
+  - Action buttons
+- **Status Indicators**:
+  - Color-coded status badges
+  - Status progression timeline
+  - Expected delivery date
+- **Each Row Actions**:
+  - "View Details" button
+  - "Edit Status" button
+  - "Print Invoice" button
+  - "Send Email" button (notification to customer)
+  - "Cancel Order" button (if allowed)
+- **Order Details View**:
+  - All items in the order
+  - Customer shipping address
+  - Billing address
+  - Payment method
+  - Shipping carrier and tracking number
+  - Order timeline (placed, confirmed, shipped, delivered)
+- **Filtering & Search**:
+  - Filter by status
+  - Filter by date range
+  - Search by customer name or order ID
+  - Sort options
+- **Bulk Actions**:
+  - Update multiple order statuses
+  - Generate shipping labels
+  - Send bulk emails to customers
+
+**What to expect:**
+- Dashboard view of all customer orders
+- Easy status management
+- Customer communication tools
+- Shipping integration
+- Order tracking visibility
 
 ---
 
 ## 📱 Responsive Design
 
 The application is fully responsive and works seamlessly on:
-- 📱 **Mobile devices** (320px and up)
-- 📱 **Tablets** (768px and up)
-- 🖥️ **Desktop screens** (1024px and up)
-- 🖥️ **Large displays** (1920px and up)
+- 📱 **Mobile devices** (320px - 480px)
+  - Single column layouts
+  - Touch-friendly buttons
+  - Vertical navigation
+- 📱 **Tablets** (481px - 1024px)
+  - 2-column product grids
+  - Sidebar navigation
+  - Adjusted spacing
+- 🖥️ **Desktop** (1025px - 1920px)
+  - 3-4 column product grids
+  - Full navigation menus
+  - Optimized spacing and padding
+- 🖥️ **Large displays** (1920px+)
+  - 4-column product grids
+  - Centered max-width container
+  - Enhanced whitespace
 
-All pages adjust layout, font sizes, and navigation based on screen size using Bootstrap's responsive grid system.
+All pages automatically adjust layout, font sizes, typography, and navigation based on screen size using Bootstrap's responsive grid system and custom CSS media queries.
 
 ## 🏗️ Tech Stack
 
