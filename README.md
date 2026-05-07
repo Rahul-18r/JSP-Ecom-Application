@@ -1,112 +1,360 @@
-# JSP-Servlet Ecommerce Website
+# JSP-Servlet E-Commerce Website
 
-## About
+A modern e-commerce platform built with Java JSP/Servlets, featuring Royal Challengers Bangalore merchandise. This project demonstrates a complete storefront with product catalog, shopping cart, checkout, user authentication, and admin management.
 
-This is a demo e-commerce website built with Java JSP/Servlets. It showcases common storefront features (catalog, cart,
-checkout, and account management) and a simple admin area for products and orders. The project is intended for learning
-and may contain bugs or security gaps. Contributions and improvements are welcome.
+## 📋 Features
 
-## Features
+- 🛍️ Product catalog with search and filtering
+- 🛒 Shopping cart with add/remove functionality
+- 💳 Checkout and order management
+- 👤 User authentication (login/registration)
+- 📦 Order history tracking
+- 🔐 Admin panel for product and order management
+- 📱 Responsive Bootstrap-based UI
+- 🎯 Modern design with curated merchandise
 
-- Login and registration
-- Search and browse products
-- Cart and checkout flow
-- Order history for customers
-- Product/order management for admins
+## 🏗️ Tech Stack
 
-## Screenshots
+| Component | Version | Details |
+|-----------|---------|---------|
+| **Java** | JDK 17+ | Microsoft OpenJDK or equivalent |
+| **JSP/Servlets** | Servlet 4.0 | `javax.*` packages |
+| **Maven** | 3.9.11+ | Build automation |
+| **MySQL** | 8.0.46+ | Relational database |
+| **Tomcat** | 9.0.117+ | Application server |
+| **Frontend** | Bootstrap 4.6 | HTML/CSS/JS framework |
+| **JSTL** | 1.2 | JSP Standard Tag Library |
+| **JDBC** | MySQL Connector/J 8.0.24+ | Database driver |
 
-![alt text](https://github.com/truonghoangthuan/jsp-servlet-ecommerce-website/blob/master/screenshots/home.png?raw=true)
-![alt text](https://github.com/truonghoangthuan/jsp-servlet-ecommerce-website/blob/master/screenshots/shop.png)
-![alt text](https://github.com/truonghoangthuan/jsp-servlet-ecommerce-website/blob/master/screenshots/cart.png)
-
-## Tech Stack
-
-- Java (JDK 16 or compatible)
-- JSP/Servlets
-- Maven
-- MySQL 5.7+ or 8.x
-- Tomcat 8.5+ (tested with 8.5.23+)
-- Bootstrap-based frontend template
-
-## Project Structure
-
-- `src/main/java/com/ecommerce` - Java source (controllers, DAOs, entities)
-- `src/main/webapp` - JSP pages, static assets, and templates
-- `src/main/webapp/WEB-INF/web.xml` - Servlet mappings
-- `Dump20210903.sql` - Sample schema/data
-
-## Prerequisites
-
-- JDK 16+ installed and `JAVA_HOME` set
-- Maven installed (or use the Maven wrapper if added later)
-- MySQL server running locally
-- Tomcat 8.5+ installed
-- IDE (IntelliJ IDEA or Eclipse) recommended
-
-## Database Setup
-
-1. Create a schema named `jsp-servlet-ecommerce-website`.
-2. Import the SQL dump:
-
-	 ```
-	 mysql -u root -p jsp-servlet-ecommerce-website < Dump20210903.sql
-	 ```
-
-3. Update database credentials if needed:
-
-	 - JDBC URL, user, and password are in `src/main/java/com/ecommerce/database/Database.java`.
-	 - Default config is:
-
-		 - URL: `jdbc:mysql://localhost:3306/jsp-servlet-ecommerce-website`
-		 - User: `root`
-		 - Password: `root`
-
-## Build
-
-From the project root:
+## 📁 Project Structure
 
 ```
+├── src/
+│   ├── main/
+│   │   ├── java/com/ecommerce/
+│   │   │   ├── control/           # Servlet controllers (CartControl, LoginControl, etc.)
+│   │   │   ├── dao/               # Data Access Objects (ProductDao, AccountDao, etc.)
+│   │   │   ├── entity/            # Domain models (Product, Account, Order, etc.)
+│   │   │   └── database/          # Database connection factory
+│   │   └── webapp/
+│   │       ├── index.jsp          # Homepage
+│   │       ├── shop.jsp           # Product listing
+│   │       ├── product-detail.jsp # Product detail page
+│   │       ├── cart.jsp           # Shopping cart
+│   │       ├── checkout.jsp       # Checkout page
+│   │       ├── login.jsp          # User login
+│   │       ├── register.jsp       # User registration
+│   │       ├── profile-page.jsp   # User profile
+│   │       ├── order-history.jsp  # Order history
+│   │       ├── order-management.jsp # Admin orders
+│   │       ├── product-management.jsp # Admin products
+│   │       ├── templates/         # JSP includes (header, footer, etc.)
+│   │       ├── static/            # CSS, JS, images
+│   │       └── WEB-INF/web.xml    # Servlet mappings
+├── pom.xml                         # Maven configuration
+├── Dump20210903.sql                # Database schema and sample data
+└── README.md                       # This file
+```
+
+## ✅ Prerequisites
+
+Before you start, ensure you have the following installed on your system:
+
+### 1. **Java Development Kit (JDK) 17+**
+   - Download: [Java SE 17+](https://www.oracle.com/java/technologies/downloads/) or [Microsoft OpenJDK](https://learn.microsoft.com/en-us/java/openjdk/download)
+   - Verify: `java -version` and `javac -version` in terminal
+   - Set `JAVA_HOME` environment variable to your JDK installation path
+
+### 2. **Maven 3.9.11+**
+   - Download: [Apache Maven](https://maven.apache.org/download.cgi)
+   - Extract to a directory (e.g., `C:\maven`)
+   - Verify: `mvn -version` in terminal
+   - Add Maven `bin` folder to your system PATH
+
+### 3. **MySQL Server 8.0.46+**
+   - Download: [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
+   - Install and start the MySQL service
+   - Default credentials: `user: root`, `password: root`
+   - Verify: `mysql -u root -p` (should prompt for password)
+
+### 4. **Apache Tomcat 9.0.117+**
+   - Download: [Apache Tomcat 9](https://tomcat.apache.org/download-90.cgi)
+   - Extract to a directory (e.g., `C:\Users\<username>\Desktop\hola\apache-tomcat`)
+   - **Important**: Tomcat will use HTTP port **8081** (not the default 8080) to avoid conflicts
+
+### 5. **Git (Optional but recommended)**
+   - Download: [Git for Windows](https://git-scm.com/download/win)
+   - Verify: `git --version` in terminal
+
+## 🚀 Setup Instructions
+
+### Step 1: Clone or Extract the Project
+
+**Via Git:**
+```powershell
+git clone https://github.com/Rahul-18r/JSP-Ecom-Application.git
+cd JSP-Ecom-Application
+```
+
+**Or extract the ZIP file and navigate to the project directory.**
+
+### Step 2: Configure Database
+
+1. **Create the database schema:**
+   ```powershell
+   mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS `jsp-servlet-ecommerce-website`;"
+   ```
+   (Enter password `root` when prompted)
+
+2. **Import the sample data:**
+   ```powershell
+   mysql -u root -p jsp-servlet-ecommerce-website < Dump20210903.sql
+   ```
+   (Enter password `root` when prompted)
+
+3. **Verify the import:**
+   ```powershell
+   mysql -u root -p -e "USE jsp-servlet-ecommerce-website; SHOW TABLES; SELECT COUNT(*) FROM product; SELECT COUNT(*) FROM account;"
+   ```
+   Expected output should show tables: `account`, `category`, `order`, `order_detail`, `product`
+
+4. **Update database credentials (if different):**
+   - Edit: `src/main/java/com/ecommerce/database/Database.java`
+   - Update these lines:
+     ```java
+     String url = "jdbc:mysql://localhost:3306/jsp-servlet-ecommerce-website";
+     String user = "root";        // your MySQL username
+     String password = "root";    // your MySQL password
+     ```
+
+### Step 3: Build the Project
+
+Navigate to the project root directory and run:
+
+```powershell
 mvn clean package
 ```
 
-This produces a WAR file in `target/`.
-
-## Run on Tomcat
-
-### Option A: Deploy WAR
-
-1. Copy the generated WAR from `target/` into `<TOMCAT_HOME>/webapps/`.
-2. Start Tomcat.
-3. Open in browser:
-
+**Expected output:**
 ```
-http://localhost:8080/<context>
+[INFO] Building war: ...\target\test-1.0-SNAPSHOT.war
+[INFO] BUILD SUCCESS
 ```
 
-`<context>` is the WAR file name (for example, `jsp-servlet-ecommerce-website-1.0-SNAPSHOT`).
+### Step 4: Deploy to Tomcat
 
-### Option B: Run from IDE
+#### Windows PowerShell:
 
-1. Import the project as a Maven project.
-2. Configure a local Tomcat server in the IDE.
-3. Set the deployment artifact to the WAR.
-4. Run the server and open the app URL shown by Tomcat.
+```powershell
+# Define paths
+$TOMCAT_HOME = "C:\Users\<username>\Desktop\hola\apache-tomcat\apache-tomcat-9.0.117"
+$PROJECT_DIR = "C:\Users\<username>\Desktop\hola\jsp-servlet-ecommerce-website\jsp-servlet-ecommerce-website-master"
+$WAR_FILE = "$PROJECT_DIR\target\test-1.0-SNAPSHOT.war"
 
-## Notes
+# Stop Tomcat (if running)
+# & "$TOMCAT_HOME\bin\catalina.bat" stop
 
-- If you change the database name or credentials, keep `Database.java` in sync.
-- The SQL dump contains sample data but no default credentials are documented. Register a new user via the UI or inspect
-	the dump if you need to know existing users.
+# Clean old deployment
+Remove-Item "$TOMCAT_HOME\webapps\ROOT" -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item "$TOMCAT_HOME\webapps\ROOT.war" -Force -ErrorAction SilentlyContinue
 
-## Contributing
+# Deploy as ROOT (serves at root context path /)
+Copy-Item $WAR_FILE "$TOMCAT_HOME\webapps\ROOT.war" -Force
 
-Open a PR or reach out to the maintainer.
+Write-Host "Deployment complete. Starting Tomcat..."
+```
 
-## Authors
+#### Then start Tomcat:
 
-- Truong Hoang Thuan - [GitHub](https://github.com/truonghoangthuan)
+```powershell
+# Start Tomcat
+& "$TOMCAT_HOME\bin\catalina.bat" run
+```
 
-## License
+**You should see in the console:**
+```
+INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [XXXX] milliseconds
+```
+
+### Step 5: Access the Application
+
+Open your web browser and navigate to:
+
+```
+http://localhost:8081/
+```
+
+You should see the homepage with the Royal Challengers Bangalore merchandise section.
+
+## 🧪 Verification Checklist
+
+After deployment, verify these features work:
+
+- [ ] **Homepage** loads at `http://localhost:8081/`
+- [ ] **Product Page** (`/shop`) shows merchandise catalog
+- [ ] **Search** icon is visible in the navigation
+- [ ] **Product Detail** page loads with add to cart button
+- [ ] **Add to Cart** adds items to the shopping cart
+- [ ] **Cart Page** displays added items with quantity controls
+- [ ] **Login** page (`/login`) displays form
+- [ ] **Registration** page (`/register`) works
+- [ ] **Checkout** flow works for authenticated users
+- [ ] **Order History** shows past orders (for logged-in users)
+
+## 🔧 Common Issues & Troubleshooting
+
+### Issue: "Address already in use :8081"
+**Solution:** Tomcat port is in use. Change it in `<TOMCAT_HOME>\conf\server.xml`:
+```xml
+<Connector port="8082" protocol="HTTP/1.1" />
+```
+Then access at `http://localhost:8082/`
+
+### Issue: "MySQL connection refused"
+**Checklist:**
+- [ ] MySQL service is running: `Get-Service | findstr MySQL`
+- [ ] Database created: `mysql -u root -p -e "SHOW DATABASES;"`
+- [ ] Check credentials in `Database.java`
+- [ ] Port 3306 is accessible
+
+### Issue: "Static assets (CSS/images) return 404"
+**Solution:** This is normal when WAR is deployed as `ROOT.war`. Assets are served via `/static/...` paths.
+- Homepage CSS: `http://localhost:8081/static/css/ui.css`
+- Images: `http://localhost:8081/static/images/...`
+
+### Issue: "Deployment fails, WAR not found"
+**Verify:**
+```powershell
+Test-Path "C:\path\to\project\target\test-1.0-SNAPSHOT.war"
+```
+If not found, rebuild: `mvn clean package`
+
+### Issue: "Cart functionality not working"
+**Debug:**
+1. Check browser Developer Tools (F12) → Network tab
+2. Verify form submission to `/cart` endpoint
+3. Check Tomcat logs: `<TOMCAT_HOME>\logs\catalina.out`
+
+## 📊 Database Information
+
+### Default Credentials
+- **MySQL User:** `root`
+- **MySQL Password:** `root`
+- **Database:** `jsp-servlet-ecommerce-website`
+
+### Sample Data
+The `Dump20210903.sql` includes:
+- **Products:** 24 sample items with descriptions and prices
+- **Categories:** 3 (Men, Women, Children)
+- **Accounts:** 9 sample user accounts
+- **Orders:** Sample order history
+
+To see sample accounts, query:
+```sql
+SELECT id, username, password FROM account;
+```
+
+## 🎯 Key Endpoints
+
+| URL | Description | Auth Required |
+|-----|-------------|---------------|
+| `/` | Homepage | No |
+| `/shop` | Product listing | No |
+| `/product-detail?id=X` | Product details | No |
+| `/cart` | Shopping cart | No |
+| `/checkout` | Checkout page | Yes |
+| `/login` | User login | No |
+| `/register` | User registration | No |
+| `/profile-page` | User profile | Yes |
+| `/order-history` | Past orders | Yes |
+| `/product-management` | Admin products | Yes (admin) |
+| `/order-management` | Admin orders | Yes (admin) |
+| `/logout` | Logout | Yes |
+
+## 🛠️ Development Workflow
+
+### Making Code Changes
+
+1. **Edit source files:**
+   ```
+   src/main/java/     - Backend code
+   src/main/webapp/   - Frontend (JSP, CSS, JS, images)
+   ```
+
+2. **Rebuild:**
+   ```powershell
+   mvn clean package
+   ```
+
+3. **Redeploy:**
+   ```powershell
+   # Copy new WAR to Tomcat
+   Copy-Item "target\test-1.0-SNAPSHOT.war" "$TOMCAT_HOME\webapps\ROOT.war" -Force
+   # Restart Tomcat (or let it auto-reload)
+   ```
+
+### Viewing Logs
+
+**Tomcat console output:**
+```powershell
+# Already visible if running with: catalina.bat run
+# Or check logs at: <TOMCAT_HOME>\logs\
+Get-Content "$TOMCAT_HOME\logs\catalina.out" -Tail 50
+```
+
+## 📝 Configuration Files
+
+### JDBC Configuration
+**File:** `src/main/java/com/ecommerce/database/Database.java`
+```java
+String url = "jdbc:mysql://localhost:3306/jsp-servlet-ecommerce-website";
+String user = "root";
+String password = "root";
+```
+
+### Servlet Mappings
+**File:** `src/main/webapp/WEB-INF/web.xml`
+Defines URL patterns for controllers (CartControl, LoginControl, etc.)
+
+### Maven Dependencies
+**File:** `pom.xml`
+- javax.servlet:javax.servlet-api (Servlet API)
+- javax.servlet:jstl (JSP Standard Tag Library)
+- mysql:mysql-connector-java (JDBC driver)
+
+## 📚 Additional Resources
+
+- [Java Servlet Documentation](https://docs.oracle.com/javaee/7/api/javax/servlet/http/HttpServlet.html)
+- [JSP Documentation](https://www.oracle.com/java/technologies/pages/jsp.html)
+- [Maven Guide](https://maven.apache.org/guides/)
+- [MySQL Documentation](https://dev.mysql.com/doc/)
+- [Tomcat Documentation](https://tomcat.apache.org/tomcat-9.0-doc/)
+- [Bootstrap 4 Documentation](https://getbootstrap.com/docs/4.6/)
+
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/YourFeature`
+3. Commit your changes: `git commit -m 'Add YourFeature'`
+4. Push to the branch: `git push origin feature/YourFeature`
+5. Open a Pull Request
+
+## 📜 License
 
 MIT License. See [LICENSE](LICENSE) for details.
+
+## 👨‍💼 Authors
+
+- **Rahul** - Current maintainer - [GitHub](https://github.com/Rahul-18r)
+- **Truong Hoang Thuan** - Original author - [GitHub](https://github.com/truonghoangthuan)
+
+## 📞 Support
+
+If you encounter issues:
+1. Check the [Troubleshooting](#-common-issues--troubleshooting) section
+2. Review the console logs in Tomcat
+3. Verify all prerequisites are installed
+4. Check MySQL connectivity
+5. Open an issue on GitHub with detailed error messages
