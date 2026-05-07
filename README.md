@@ -13,6 +13,444 @@ A modern e-commerce platform built with Java JSP/Servlets, featuring Royal Chall
 - 📱 Responsive Bootstrap-based UI
 - 🎯 Modern design with curated merchandise
 
+## 📸 Screenshots
+
+### Homepage
+The homepage features a modern hero section with Royal Challengers Bangalore merchandise showcase. It includes:
+- **Hero Banner**: Curated RCB merchandise header with promotional messaging
+- **Offer Strip**: Time-limited offer display with countdown timestamp
+- **Featured Products**: Carousel of popular merchandise items
+- **Collections Section**: Category shortcuts (Men, Women, Children)
+- **Responsive Navigation**: Header with search, cart icon, and user menu
+
+**Access:** `http://localhost:8081/`
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  Search Bar        [Cart] [Login]                   │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│   ROYAL CHALLENGERS BANGALORE MERCH                          │
+│   Curated like a premium launch                              │
+│                                                               │
+│   [ RCB Capsule Collection ]   [ Limited Offers ]           │
+│                                                               │
+│   ┌─────────────────────────────────────────────────────┐  │
+│   │                                                       │  │
+│   │   [RCB Puma Jersey Image]                            │  │
+│   │   Offer ends in: 02:14:08                            │  │
+│   │                                                       │  │
+│   └─────────────────────────────────────────────────────┘  │
+│                                                               │
+├─────────────────────────────────────────────────────────────┤
+│  MEN  |  WOMEN  |  CHILDREN                                 │
+├─────────────────────────────────────────────────────────────┤
+│  [Footer with Links and Contact Info]                       │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Shop / Products Page
+Browse all available merchandise items with filtering and search capabilities.
+
+**Features:**
+- Grid display of all products
+- Product image thumbnails
+- Product name, price, and brief description
+- "View Details" button for each product
+- Responsive grid (1-4 columns based on screen size)
+
+**Access:** `http://localhost:8081/shop`
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  Search Bar        [Cart] [Login]                   │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  SHOP - All Products                                         │
+│                                                               │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
+│  │          │  │          │  │          │  │          │   │
+│  │ Product  │  │ Product  │  │ Product  │  │ Product  │   │
+│  │   Image  │  │   Image  │  │   Image  │  │   Image  │   │
+│  │          │  │          │  │          │  │          │   │
+│  ├──────────┤  ├──────────┤  ├──────────┤  ├──────────┤   │
+│  │ Name     │  │ Name     │  │ Name     │  │ Name     │   │
+│  │ $Price   │  │ $Price   │  │ $Price   │  │ $Price   │   │
+│  │ [Details]│  │ [Details]│  │ [Details]│  │ [Details]│   │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
+│                                                               │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐   │
+│  │ Product  │  │ Product  │  │ Product  │  │ Product  │   │
+│  │  ...     │  │  ...     │  │  ...     │  │  ...     │   │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘   │
+│                                                               │
+├─────────────────────────────────────────────────────────────┤
+│  [Footer]                                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Product Detail Page
+View detailed information about a specific product with options to add to cart.
+
+**Features:**
+- Large product image
+- Product name and description
+- Price display
+- Quantity selector (increase/decrease buttons)
+- "Add To Cart" button
+- Available stock count
+- Related products (optional)
+
+**Access:** `http://localhost:8081/product-detail?id=1`
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  Search Bar        [Cart] [Login]                   │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  ┌──────────────┐   Product Name                             │
+│  │              │   Description of the product               │
+│  │  Large       │   Details about the merchandise             │
+│  │  Product     │                                             │
+│  │  Image       │   Price: $99.99                            │
+│  │              │                                             │
+│  │              │   Quantity: [−] 1 [+]                     │
+│  │              │   Available: 50 units                      │
+│  └──────────────┘   [Add To Cart Button]                     │
+│                                                               │
+├─────────────────────────────────────────────────────────────┤
+│  [Footer]                                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Shopping Cart Page
+Review items in the cart, adjust quantities, and proceed to checkout.
+
+**Features:**
+- Table listing all cart items
+- Product image, name, and price
+- Quantity adjustment controls
+- Remove item buttons
+- Subtotal per item
+- Cart total/summary
+- "Proceed to Checkout" button
+- "Continue Shopping" link
+
+**Access:** `http://localhost:8081/cart`
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  Search Bar        [Cart:3] [Login]                 │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  SHOPPING CART (3 items)                                     │
+│                                                               │
+│  ┌───┬──────────┬──────────┬──────┬──────────┬──────────┐  │
+│  │IMG│ Product  │  Price   │ Qty  │ Subtotal │  Action  │  │
+│  ├───┼──────────┼──────────┼──────┼──────────┼──────────┤  │
+│  │[!]│ Jersey 1 │  $99.99  │ [−]2[+]│$199.98  │ [Remove] │  │
+│  ├───┼──────────┼──────────┼──────┼──────────┼──────────┤  │
+│  │[!]│ Jersey 2 │  $89.99  │ [−]1[+]│$89.99   │ [Remove] │  │
+│  ├───┼──────────┼──────────┼──────┼──────────┼──────────┤  │
+│  │[!]│ Cap      │  $29.99  │ [−]1[+]│$29.99   │ [Remove] │  │
+│  └───┴──────────┴──────────┴──────┴──────────┴──────────┘  │
+│                                                               │
+│  Cart Total: $319.96                                         │
+│  [Continue Shopping]  [Proceed to Checkout]                 │
+│                                                               │
+├─────────────────────────────────────────────────────────────┤
+│  [Footer]                                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Login Page
+Authenticate existing users to access account features.
+
+**Features:**
+- Username/Email input field
+- Password input field
+- "Remember Me" checkbox
+- Login button
+- Link to registration page
+- Password recovery option (optional)
+- Clear error messages for failed login
+
+**Access:** `http://localhost:8081/login`
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  Search Bar        [Cart] [Login]                   │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│                     LOGIN TO YOUR ACCOUNT                    │
+│                                                               │
+│              ┌──────────────────────────────┐               │
+│              │                              │               │
+│              │  Email/Username:             │               │
+│              │  [__________________]        │               │
+│              │                              │               │
+│              │  Password:                   │               │
+│              │  [__________________]        │               │
+│              │                              │               │
+│              │  ☑ Remember Me              │               │
+│              │                              │               │
+│              │  [    LOGIN BUTTON   ]      │               │
+│              │                              │               │
+│              │  New user? [Register Here]  │               │
+│              │                              │               │
+│              └──────────────────────────────┘               │
+│                                                               │
+├─────────────────────────────────────────────────────────────┤
+│  [Footer]                                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Registration Page
+Create a new user account to access the platform.
+
+**Features:**
+- First Name and Last Name fields
+- Email input
+- Password and Confirm Password fields
+- Phone number field (optional)
+- Address fields (optional)
+- Terms and Conditions checkbox
+- Register button
+- Link to login page
+
+**Access:** `http://localhost:8081/register`
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  Search Bar        [Cart] [Login]                   │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│                    CREATE NEW ACCOUNT                        │
+│                                                               │
+│              ┌──────────────────────────────┐               │
+│              │                              │               │
+│              │  First Name: [____________]  │               │
+│              │  Last Name:  [____________]  │               │
+│              │  Email:      [____________]  │               │
+│              │  Password:   [____________]  │               │
+│              │  Confirm:    [____________]  │               │
+│              │  Phone:      [____________]  │               │
+│              │  Address:    [____________]  │               │
+│              │                              │               │
+│              │  ☑ I agree to Terms         │               │
+│              │                              │               │
+│              │  [   REGISTER BUTTON   ]    │               │
+│              │                              │               │
+│              │  Already registered?        │               │
+│              │  [Login Here]               │               │
+│              │                              │               │
+│              └──────────────────────────────┘               │
+│                                                               │
+├─────────────────────────────────────────────────────────────┤
+│  [Footer]                                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Checkout Page
+Complete the purchase and place an order.
+
+**Features:**
+- Order summary with items and totals
+- Shipping address form
+- Payment method selection
+- Order total calculation
+- Promo code input (optional)
+- "Place Order" button
+- Order confirmation message after success
+
+**Access:** `http://localhost:8081/checkout` (requires login)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  Search Bar        [Cart] [Login: Logged In]        │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  CHECKOUT - Review Your Order                               │
+│                                                               │
+│  Order Summary:              Shipping Address:               │
+│  ┌──────────────────┐       ┌──────────────────┐            │
+│  │ Jersey 1: $99.99 │       │ Name: __________ │            │
+│  │ Jersey 2: $89.99 │       │ Email: _________ │            │
+│  │ Cap:      $29.99 │       │ Address: _______ │            │
+│  ├──────────────────┤       │ City: __________ │            │
+│  │ Subtotal: $319.96│       │ Zip: ___________ │            │
+│  │ Tax:       $25.58│       │ Country: _______ │            │
+│  │ Shipping:  $10.00│       └──────────────────┘            │
+│  ├──────────────────┤                                        │
+│  │ TOTAL:    $355.54│       [  Place Order  ]               │
+│  └──────────────────┘                                        │
+│                                                               │
+├─────────────────────────────────────────────────────────────┤
+│  [Footer]                                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Order History Page
+View all past orders and their details.
+
+**Features:**
+- Table of past orders
+- Order ID, date, total, status
+- View order details button
+- Order status indicators
+- Download invoice option (optional)
+- Filter by status or date range
+
+**Access:** `http://localhost:8081/order-history` (requires login)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  Search Bar        [Cart] [Profile]                 │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  ORDER HISTORY                                               │
+│                                                               │
+│  ┌────────┬────────────┬───────────┬────────┬────────────┐  │
+│  │Order ID│    Date    │  Total    │ Status │   Action   │  │
+│  ├────────┼────────────┼───────────┼────────┼────────────┤  │
+│  │ #00123 │ 2026-05-05 │ $355.54   │Shipped│[   View   ]│  │
+│  ├────────┼────────────┼───────────┼────────┼────────────┤  │
+│  │ #00122 │ 2026-05-03 │ $199.99   │Shipped│[   View   ]│  │
+│  ├────────┼────────────┼───────────┼────────┼────────────┤  │
+│  │ #00121 │ 2026-04-28 │ $89.99    │Pending│[   View   ]│  │
+│  └────────┴────────────┴───────────┴────────┴────────────┘  │
+│                                                               │
+├─────────────────────────────────────────────────────────────┤
+│  [Footer]                                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### User Profile Page
+Manage account information and settings.
+
+**Features:**
+- Display user information
+- Edit profile form
+- Change password form
+- Saved addresses
+- Account preferences
+- Logout button
+
+**Access:** `http://localhost:8081/profile-page` (requires login)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  Search Bar        [Cart] [Profile: Logged In]      │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  MY PROFILE                                                  │
+│                                                               │
+│  Personal Information:                                       │
+│  ┌──────────────────────────────────────────┐              │
+│  │ Name: [John Doe         ]                │              │
+│  │ Email: [john@example.com]                │              │
+│  │ Phone: [+1 234 567 8900]                 │              │
+│  │                                          │              │
+│  │ [   UPDATE PROFILE   ]  [CHANGE PASSWORD]│              │
+│  └──────────────────────────────────────────┘              │
+│                                                               │
+│  Addresses:                                                  │
+│  ┌──────────────────────────────────────────┐              │
+│  │ ☑ 123 Main St, City, ST 12345 [Edit][Del]│              │
+│  │ ☐ 456 Oak Ave, City, ST 67890 [Edit][Del]│              │
+│  │                                          │              │
+│  │ [  ADD NEW ADDRESS  ]                    │              │
+│  └──────────────────────────────────────────┘              │
+│                                                               │
+│  [  LOGOUT  ]                                               │
+│                                                               │
+├─────────────────────────────────────────────────────────────┤
+│  [Footer]                                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Admin Product Management
+Administrator panel for managing product inventory.
+
+**Features:** (Admin only)
+- Table of all products
+- Edit product details
+- Delete products
+- Add new products
+- Manage inventory/stock levels
+- Set product images
+
+**Access:** `http://localhost:8081/product-management` (requires admin login)
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  [Logo]  Search Bar        [Cart] [Admin Panel]             │
+├─────────────────────────────────────────────────────────────┤
+│                                                               │
+│  PRODUCT MANAGEMENT                                          │
+│                                                               │
+│  [  + ADD NEW PRODUCT  ]                                     │
+│                                                               │
+│  ┌────────┬──────────┬──────────┬──────┬────────────────┐   │
+│  │Product │  Name    │  Price   │Stock │    Action      │   │
+│  │  ID    │          │          │      │                │   │
+│  ├────────┼──────────┼──────────┼──────┼────────────────┤   │
+│  │   1    │ Jersey 1 │  $99.99  │  50  │[Edit] [Delete] │   │
+│  ├────────┼──────────┼──────────┼──────┼────────────────┤   │
+│  │   2    │ Jersey 2 │  $89.99  │  75  │[Edit] [Delete] │   │
+│  ├────────┼──────────┼──────────┼──────┼────────────────┤   │
+│  │   3    │   Cap    │  $29.99  │ 100  │[Edit] [Delete] │   │
+│  └────────┴──────────┴──────────┴──────┴────────────────┘   │
+│                                                               │
+├─────────────────────────────────────────────────────────────┤
+│  [Footer]                                                    │
+└─────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### Admin Order Management
+Administrator panel for managing customer orders.
+
+**Features:** (Admin only)
+- View all customer orders
+- Update order status
+- View order details
+- Manage fulfillment
+- Track shipping
+
+**Access:** `http://localhost:8081/order-management` (requires admin login)
+
+---
+
+## 📱 Responsive Design
+
+The application is fully responsive and works seamlessly on:
+- 📱 **Mobile devices** (320px and up)
+- 📱 **Tablets** (768px and up)
+- 🖥️ **Desktop screens** (1024px and up)
+- 🖥️ **Large displays** (1920px and up)
+
+All pages adjust layout, font sizes, and navigation based on screen size using Bootstrap's responsive grid system.
+
 ## 🏗️ Tech Stack
 
 | Component | Version | Details |
