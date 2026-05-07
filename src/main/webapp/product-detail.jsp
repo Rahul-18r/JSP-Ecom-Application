@@ -13,7 +13,7 @@
     <div class="bg-light py-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="/">Home</a> <span class="mx-2 mb-0">/</span> <strong
+                <div class="col-md-12 mb-0"><a href="${pageContext.request.contextPath}/">Home</a> <span class="mx-2 mb-0">/</span> <strong
                         class="text-black">${product.name}</strong></div>
             </div>
         </div>
@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <img src="data:image/jpg;base64,${product.base64Image}" alt="Image" class="img-fluid"
-                         onerror="this.onerror=null; this.src='static/images/placeholder.svg';">
+                        onerror="this.onerror=null; this.src='static/images/puma-rcb-jersey.png';">
                 </div>
 
                 <div class="col-md-6">
@@ -34,7 +34,7 @@
 
                     <p><strong class="text-primary h4">$${product.price}</strong></p>
 
-                    <form action="cart?product-id=&quantity=" method="get">
+                    <form action="${pageContext.request.contextPath}/cart" method="get">
                         <div class="mb-3">
                             <div class="input-group mb-3" style="max-width: 200px;">
                                 <input name="product-id" value="${product.id}" type="hidden">

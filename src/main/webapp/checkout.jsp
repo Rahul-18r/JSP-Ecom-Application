@@ -14,10 +14,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 mb-0">
-                    <a href="/"> Home </a>
+                    <a href="${pageContext.request.contextPath}/"> Home </a>
                     <span class="mx-2 mb-0">/</span>
 
-                    <a href="cart.jsp">Cart</a>
+                    <a href="${pageContext.request.contextPath}/cart.jsp">Cart</a>
                     <span class="mx-2 mb-0">/</span>
 
                     <strong class="text-black">Checkout</strong>

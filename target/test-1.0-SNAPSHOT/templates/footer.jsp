@@ -2,45 +2,51 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <footer class="site-footer border-top">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 mb-5 mb-lg-0">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h3 class="footer-heading mb-4">Navigations</h3>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <ul class="list-unstyled">
-                            <li><a href="#">Sell online</a></li>
-                            <li><a href="#">Features</a></li>
-                            <li><a href="#">Shopping cart</a></li>
-                            <li><a href="#">Store builder</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <ul class="list-unstyled">
-                            <li><a href="#">Mobile commerce</a></li>
-                            <li><a href="#">Dropshipping</a></li>
-                            <li><a href="#">Website development</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <ul class="list-unstyled">
-                            <li><a href="#">Point of sale</a></li>
-                            <li><a href="#">Hardware</a></li>
-                            <li><a href="#">Software</a></li>
-                        </ul>
-                    </div>
+        <div class="footer-shell">
+            <div class="footer-brand">
+                <div class="footer-brand__mark">JSP Ecom</div>
+                <h3 class="footer-heading mb-4">Fan merch store</h3>
+                <p>
+                    Premium fan gear for Royal Challengers IPL and Red Bull Racing, laid out with a polished,
+                    SaaS-style merchandising experience.
+                </p>
+
+                <div class="chip-row chip-row--dark">
+                    <span class="chip chip--dark">Limited offers</span>
+                    <span class="chip chip--dark">RCB drops</span>
+                    <span class="chip chip--dark">Red Bull Racing</span>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
-                <h3 class="footer-heading mb-4">Promo</h3>
-                <a href="#" class="block-6">
-                    <img src="static/images/hero_1.jpg" alt="Image placeholder" class="img-fluid rounded mb-4">
-                    <h3 class="font-weight-light  mb-0">Finding Your Perfect Shoes</h3>
-                    <p>Promo from nuary 15 &mdash; 25, 2019</p>
+
+            <div class="footer-links">
+                <h3 class="footer-heading mb-4">Shop</h3>
+                <ul class="list-unstyled">
+                    <li><a href="${pageContext.request.contextPath}/shop">All merch</a></li>
+                    <li><a href="${pageContext.request.contextPath}/shop">RCB jersey drops</a></li>
+                    <li><a href="${pageContext.request.contextPath}/shop">Red Bull racing capsule</a></li>
+                    <li><a href="${pageContext.request.contextPath}/order-history">Order history</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-promo">
+                <a href="${pageContext.request.contextPath}/shop" class="footer-drop-card">
+                    <img src="${pageContext.request.contextPath}/static/images/puma-rcb-jersey.png?v=20260506"
+                         alt="Royal Challengers merchandise">
+                    <div class="footer-drop-card__eyebrow">Royal Challengers</div>
+                    <h4>Match-day merch</h4>
+                    <p>Jerseys, caps, and fan-ready bundles.</p>
+                </a>
+
+                <a href="${pageContext.request.contextPath}/shop" class="footer-drop-card footer-drop-card--dark">
+                    <img src="${pageContext.request.contextPath}/static/images/red-bull-racing-capsule.svg?v=20260506"
+                         alt="Red Bull Racing merchandise">
+                    <div class="footer-drop-card__eyebrow">Red Bull Racing</div>
+                    <h4>Race-week merch</h4>
+                    <p>Premium fan gear with a paddock edge.</p>
                 </a>
             </div>
-            <div class="col-md-6 col-lg-3">
+
+            <div class="footer-contact">
                 <div class="block-5 mb-5">
                     <h3 class="footer-heading mb-4">Contact Info</h3>
                     <ul class="list-unstyled">
@@ -61,19 +67,16 @@
                 </div>
             </div>
         </div>
-        <div class="row pt-5 mt-5 text-center">
-            <div class="col-md-12">
-                <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;<script data-cfasync="false"
-                                            src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-                    <script>document.write(new Date().getFullYear());</script>
-                    All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i>
-                    by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-            </div>
 
+        <div class="footer-bottom">
+            <p>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                JSP Ecom. All rights reserved.
+            </p>
+            <p class="footer-credit">
+                Template base by <a href="https://colorlib.com" target="_blank" rel="noreferrer">Colorlib</a>.
+                Refreshed for the RCB and Red Bull Racing fan store.
+            </p>
         </div>
     </div>
 </footer>

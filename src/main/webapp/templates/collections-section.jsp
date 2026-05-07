@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <% response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); %>
 
@@ -7,9 +8,9 @@
         <div class="row">
             <c:forEach items="${category_list}" var="o">
                 <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay="">
-                    <a class="block-2-item" href="category?category_id=${o.id}">
+                    <a class="block-2-item" href="${pageContext.request.contextPath}/category?category_id=${o.id}">
                         <figure class="image">
-                            <img src="static/images/${o.name}.jpg" alt="" class="img-fluid">
+                            <img src="${pageContext.request.contextPath}/static/images/${fn:toLowerCase(o.name)}.jpg?v=20260506" alt="${o.name}" class="img-fluid">
                         </figure>
 
                         <div class="text">

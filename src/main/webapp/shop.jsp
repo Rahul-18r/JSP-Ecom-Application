@@ -14,7 +14,7 @@
     <div class="bg-light py-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="/">Home</a> <span class="mx-2 mb-0">/</span> <strong
+                <div class="col-md-12 mb-0"><a href="${pageContext.request.contextPath}/">Home</a> <span class="mx-2 mb-0">/</span> <strong
                         class="text-black">Shop</strong></div>
             </div>
         </div>
@@ -54,9 +54,9 @@
                                 <div class="block-4 text-center border" style="height: 100%">
                                     <figure class="block-4-image">
                                         <a href="product-detail?id=${o.id}">
-                                            <img src="data:image/jpg;base64,${o.base64Image}" alt="Image placeholder"
-                                                 class="img-fluid" style="height: 100%"
-                                                 onerror="this.onerror=null; this.src='static/images/placeholder.svg';">
+                                                <img src="data:image/jpg;base64,${o.base64Image}" alt="Image placeholder"
+                                                    class="img-fluid" style="height: 100%"
+                                                    onerror="this.onerror=null; this.src='static/images/puma-rcb-jersey.png';">
                                         </a>
                                     </figure>
                                     <div class="block-4-text p-4">

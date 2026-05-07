@@ -13,7 +13,7 @@
     <div class="bg-light py-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="/">Home</a> <span class="mx-2 mb-0">/</span> <strong
+                <div class="col-md-12 mb-0"><a href="${pageContext.request.contextPath}/">Home</a> <span class="mx-2 mb-0">/</span> <strong
                         class="text-black">Products management</strong></div>
             </div>
         </div>
@@ -42,7 +42,7 @@
                                 <tr>
                                     <td class="product-thumbnail">
                                         <img src="data:image/jpg;base64,${o.base64Image}" alt="Image" class="img-fluid"
-                                             onerror="this.onerror=null; this.src='static/images/placeholder.svg';">
+                                            onerror="this.onerror=null; this.src='static/images/puma-rcb-jersey.png';">
                                     </td>
 
                                     <td>${o.id}</td>

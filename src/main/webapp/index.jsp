@@ -10,25 +10,53 @@
 <div class="site-wrap">
     <jsp:include page="templates/header.jsp"/>
 
-    <div class="site-blocks-cover" style="background-image: url(static/images/hero_1.jpg);" data-aos="fade">
-        <div class="container">
-            <div class="row align-items-start align-items-md-center justify-content-end">
-                <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">
-                    <h1 class="mb-2">Finding Your Perfect Shoes</h1>
+    <section class="hero-split hero-split--merch" data-aos="fade">
+        <div class="hero-grid">
+            <div class="hero-copy">
+                <div class="hero-kicker">Fan drops / limited offers</div>
+                <h1 class="hero-title">Royal Challengers Bangalore merch, curated like a premium launch.</h1>
+                <p>
+                    A merch-first storefront for RCB fans. Shop jerseys, caps,
+                    hoodies, and match-day essentials with a polished, premium home experience.
+                </p>
 
-                    <div class="intro-text text-center text-md-left">
-                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis
-                            quam. Integer accumsan tincidunt fringilla.
-                        </p>
+                <div class="hero-offer-strip">
+                    <span class="offer-chip offer-chip--accent">RCB matchday capsule</span>
+                    <span class="offer-chip">Limited offers</span>
+                </div>
 
-                        <p>
-                            <a href="shop" class="btn btn-sm btn-primary">Shop Now</a>
-                        </p>
+                <div class="hero-actions">
+                    <a href="#merch-capsules" class="btn btn-primary">Explore merch</a>
+                    <a href="${pageContext.request.contextPath}/shop" class="btn btn-outline-primary">Open shop</a>
+                </div>
+
+                <div class="hero-stat-grid">
+                    <div class="stat-card">
+                        <strong>02</strong>
+                        <span>Fan capsules</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>24h</strong>
+                        <span>Drop-ready ordering</span>
+                    </div>
+                    <div class="stat-card">
+                        <strong>Pro</strong>
+                        <span>SaaS-style layout</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-panel">
+                <div class="hero-stack hero-stack--single">
+                    <div class="hero-card hero-card--primary">
+                        <div class="hero-badge">RCB spotlight</div>
+                        <img src="${pageContext.request.contextPath}/static/images/puma-rcb-jersey.png?v=20260506"
+                             alt="Royal Challengers merchandise spotlight">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <div class="site-section site-section-sm site-blocks-1">
         <div class="container">
@@ -39,9 +67,8 @@
                     </div>
 
                     <div class="text">
-                        <h2 class="text-uppercase">Free Shipping</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer
-                            accumsan tincidunt fringilla.</p>
+                        <h2 class="text-uppercase">Fast delivery</h2>
+                        <p>Streamlined delivery experience with a storefront that feels premium from the first click.</p>
                     </div>
                 </div>
 
@@ -50,9 +77,8 @@
                         <span class="icon-refresh2"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Free Returns</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer
-                            accumsan tincidunt fringilla.</p>
+                        <h2 class="text-uppercase">Easy returns</h2>
+                        <p>A clear product experience that makes shopping simple, confident, and visually focused.</p>
                     </div>
                 </div>
 
@@ -61,9 +87,8 @@
                         <span class="icon-help"></span>
                     </div>
                     <div class="text">
-                        <h2 class="text-uppercase">Customer Support</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer
-                            accumsan tincidunt fringilla.</p>
+                        <h2 class="text-uppercase">Support that feels human</h2>
+                        <p>Helpful, high-trust messaging that matches the new editorial storefront experience.</p>
                     </div>
                 </div>
             </div>
@@ -74,26 +99,37 @@
 
     <jsp:include page="templates/featured-products.jsp"/>
 
-    <div class="site-section block-8">
+    <div class="site-section merch-section" id="merch-capsules">
         <div class="container">
-            <div class="row justify-content-center  mb-5">
-                <div class="col-md-7 site-section-heading text-center pt-4">
-                    <h2>Big Sale!</h2>
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-9 site-section-heading text-center pt-4">
+                    <div class="section-kicker section-kicker--dark">Merch capsules</div>
+                    <h2>Royal Challengers Bangalore</h2>
+                    <p class="section-subtitle mx-auto">
+                        Curated fan gear with a premium launch feel, built for match day only.
+                    </p>
                 </div>
             </div>
-            <div class="row align-items-center">
-                <div class="col-md-12 col-lg-7 mb-5">
-                    <a href="#"><img src="static/images/blog_1.jpg" alt="Image placeholder"
-                                     class="img-fluid rounded"></a>
-                </div>
-                <div class="col-md-12 col-lg-5 text-center pl-md-5">
-                    <h2><a href="#">50% less in all items</a></h2>
-                    <p class="post-meta mb-4">By <a href="#">Carl Smith</a> <span class="block-8-sep">&bullet;</span>
-                        September 3, 2018</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere
-                        corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
-                    <p><a href="shop" class="btn btn-primary btn-sm">Shop Now</a></p>
-                </div>
+            <div class="merch-grid merch-grid--single">
+                <article class="merch-card merch-card--rcb" data-aos="fade-up">
+                    <div class="merch-card__media">
+                        <span class="merch-card__tag">IPL fan kit</span>
+                        <img src="${pageContext.request.contextPath}/static/images/puma-rcb-jersey.png?v=20260506"
+                             alt="Royal Challengers fan merch">
+                    </div>
+                    <div class="merch-card__body">
+                        <div class="merch-card__eyebrow">Royal Challengers Bangalore</div>
+                        <h3>RCB match-day merch</h3>
+                        <p>
+                            Jerseys, caps, and supporter essentials wrapped in a vivid red-and-gold story.
+                        </p>
+                        <div class="merch-card__meta">Offer ends in: <strong>02:14:08</strong></div>
+                        <div class="merch-card__actions">
+                            <a href="${pageContext.request.contextPath}/shop" class="btn btn-primary btn-sm">Shop RCB merch</a>
+                            <a href="${pageContext.request.contextPath}/shop" class="btn btn-outline-primary btn-sm">See more drops</a>
+                        </div>
+                    </div>
+                </article>
             </div>
         </div>
     </div>

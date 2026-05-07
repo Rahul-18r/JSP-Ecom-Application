@@ -13,7 +13,7 @@
     <div class="bg-light py-3">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 mb-0"><a href="/">Home</a> <span class="mx-2 mb-0">/</span> <strong
+                <div class="col-md-12 mb-0"><a href="${pageContext.request.contextPath}/">Home</a> <span class="mx-2 mb-0">/</span> <strong
                         class="text-black">Cart</strong></div>
             </div>
         </div>
@@ -95,7 +95,7 @@
                 <div class="col-md-6">
                     <div class="row mb-5">
                         <div class="col-md-6 mb-3 mb-md-0">
-                            <a href="shop" class="btn btn-outline-primary btn-sm btn-block">Continue shopping</a>
+                            <a href="${pageContext.request.contextPath}/shop" class="btn btn-outline-primary btn-sm btn-block">Continue shopping</a>
                         </div>
                     </div>
                     <div class="row">

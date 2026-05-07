@@ -24,6 +24,15 @@ timeout /t 3 /nobreak >nul
 
 echo.
 echo [3/4] Deploying WAR to Tomcat...
+if exist "%CATALINA_HOME%\webapps\jsp-servlet-ecommerce-website" (
+    rmdir /S /Q "%CATALINA_HOME%\webapps\jsp-servlet-ecommerce-website"
+)
+if exist "%CATALINA_HOME%\work\Catalina\localhost\jsp-servlet-ecommerce-website" (
+    rmdir /S /Q "%CATALINA_HOME%\work\Catalina\localhost\jsp-servlet-ecommerce-website"
+)
+if exist "%CATALINA_HOME%\temp" (
+    del /Q "%CATALINA_HOME%\temp\*" >nul 2>&1
+)
 copy /Y "target\test-1.0-SNAPSHOT.war" "%CATALINA_HOME%\webapps\jsp-servlet-ecommerce-website.war"
 
 echo.

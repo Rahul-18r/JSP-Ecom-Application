@@ -3,120 +3,70 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <title>Sign up</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/png" href="static/images/logo.png"/>
-    <link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="static/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-    <link rel="stylesheet" type="text/css" href="static/vendor/animate/animate.css">
-    <link rel="stylesheet" type="text/css" href="static/vendor/css-hamburgers/hamburgers.min.css">
-    <link rel="stylesheet" type="text/css" href="static/vendor/animsition/css/animsition.min.css">
-    <link rel="stylesheet" type="text/css" href="static/vendor/select2/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="static/vendor/daterangepicker/daterangepicker.css">
-    <link rel="stylesheet" type="text/css" href="static/css/util.css">
-    <link rel="stylesheet" type="text/css" href="static/css/main.css">
-
-    <link rel="stylesheet" href="static/css/bootstrap.min.css">
-    <link rel="stylesheet" href="static/css/magnific-popup.css">
-    <link rel="stylesheet" href="static/css/jquery-ui.css">
-    <link rel="stylesheet" href="static/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="static/css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="static/css/aos.css">
-    <link rel="stylesheet" href="static/css/style.css">
-</head>
+<jsp:include page="templates/head.jsp"/>
 
 <body>
-<div class="limiter">
-    <div class="container-login100">
-        <div class="shadow-lg p-2 p-lg-5 rounded" data-aos="fade-up">
-            <div class="wrap-login100 p-t-50 p-b-90">
-                <form action="register" method="post"
-                      class="login100-form validate-form flex-sb flex-w justify-content-center"
-                      enctype="multipart/form-data">
-                    <span class="login100-form-title m-b-20">
-                        Create account
-                    </span>
+<div class="auth-screen">
+    <div class="auth-visual">
+        <div class="auth-visual-card">
+            <img src="${pageContext.request.contextPath}/static/images/red-bull-racing-capsule.svg?v=20260506" alt="Red Bull Racing merch capsule">
+            <div class="auth-visual-copy">
+                <div class="auth-kicker">Create account</div>
+                <h1 class="auth-title" style="color:#fff !important;">Unlock merch drops.</h1>
+                <p class="auth-note" style="color:rgba(255,255,255,0.78); max-width: 460px;">
+                    Build your account to save Royal Challengers and Red Bull Racing fan gear, track orders,
+                    and move through checkout faster.
+                </p>
+                <div class="chip-row">
+                    <span class="chip">RCB drops</span>
+                    <span class="chip">Red Bull Racing</span>
+                    <span class="chip">Secure access</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="auth-shell">
+        <div class="auth-panel">
+            <div class="auth-brand">JSP Ecom</div>
+            <div class="auth-card">
+                <div class="auth-kicker" style="color: var(--olive);">Sign up</div>
+                <h2 class="auth-title">Create your merch account</h2>
+                <p class="auth-note">Register once to personalize the storefront, save fan drops, and keep your shopping history in one place.</p>
 
+                <form action="register" method="post" class="auth-form" enctype="multipart/form-data">
                     ${alert}
 
-                    <div class="m-b-16">
-                        <label class="m-0" for="imgInp">
-                            <figure class="d-flex justify-content-center m-0">
-                                <img id="blah" src="static/images/blank_avatar.png" alt="your image"
-                                     style="border-radius: 50%; height: 8em; width: 8em">
-                            </figure>
-                            <figcaption>Click here to change profile image</figcaption>
+                    <div class="mb-4 text-center">
+                        <label class="m-0" for="imgInp" style="cursor: pointer; display: inline-block;">
+                            <img id="blah" src="${pageContext.request.contextPath}/static/images/blank_avatar.png?v=20260506" alt="Profile preview"
+                                 style="width: 8.5rem; height: 8.5rem; object-fit: cover; border-radius: 50%;">
+                            <div class="mt-3 text-muted small">Click to upload profile image</div>
                         </label>
                         <input name="profile-image" type="file" id="imgInp" style="display: none;">
                     </div>
-
-                    <div class="wrap-input100 validate-input m-b-16" data-validate="Username is required">
-                        <input class="input100" type="text" name="username" placeholder="Username">
-                        <span class="focus-input100"></span>
+                    <div class="form-group mb-3">
+                        <input class="form-control input100" type="text" name="username" placeholder="Username">
                     </div>
-
-                    <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
-                        <input class="input100" type="password" name="password" placeholder="Password">
-                        <span class="focus-input100"></span>
+                    <div class="form-group mb-3">
+                        <input class="form-control input100" type="password" name="password" placeholder="Password">
                     </div>
-
-                    <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
-                        <input class="input100" type="password" name="repeat-password"
-                               placeholder="Repeat your password">
-                        <span class="focus-input100"></span>
+                    <div class="form-group mb-3">
+                        <input class="form-control input100" type="password" name="repeat-password" placeholder="Repeat password">
                     </div>
-
-                    <div class="container-login100-form-btn m-t-17">
-                        <button type="submit" class="login100-form-btn">
-                            Sign up
-                        </button>
-                    </div>
+                    <button type="submit" class="login100-form-btn btn btn-primary w-100">Sign up</button>
                 </form>
-            </div>
 
-            <div class="text-center">
-                <p class="txt1" style="color: #999999">
-                    Already have an account?
-                    <a href="login.jsp" class="txt1">
-                        Login here
-                    </a>
-                </p>
+                <div class="text-center mt-4">
+                    <p class="mb-0 text-muted">
+                        Already have an account?
+                        <a href="login.jsp" class="auth-link">Login here</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div id="dropDownSelect1"></div>
-
-<script src="static/vendor/jquery/jquery-3.2.1.min.js"></script>
-<script src="static/vendor/animsition/js/animsition.min.js"></script>
-<script src="static/vendor/bootstrap/js/popper.js"></script>
-<script src="static/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="static/vendor/select2/select2.min.js"></script>
-<script src="static/vendor/daterangepicker/moment.min.js"></script>
-<script src="static/vendor/daterangepicker/daterangepicker.js"></script>
-<script src="static/vendor/countdowntime/countdowntime.js"></script>
-
-<script src="static/js/jquery-3.3.1.min.js"></script>
-<script src="static/js/jquery-ui.js"></script>
-<script src="static/js/popper.min.js"></script>
-<script src="static/js/bootstrap.min.js"></script>
-<script src="static/js/owl.carousel.min.js"></script>
-<script src="static/js/jquery.magnific-popup.min.js"></script>
-<script src="static/js/aos.js"></script>
-<script src="static/js/main.js"></script>
-
-<script>
-    imgInp.onchange = evt => {
-        const [file] = imgInp.files
-        if (file) {
-            blah.src = URL.createObjectURL(file)
-        }
-    }
-</script>
+<jsp:include page="templates/scripts.jsp"/>
 </body>
 </html>
