@@ -30,7 +30,7 @@
                                 <th>Image</th>
                                 <th>ID</th>
                                 <th style="max-width: 120px">Product name</th>
-                                <th>Price</th>
+                                <th>Price (INR)</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
                             </tr>
@@ -39,7 +39,7 @@
                             <c:forEach items="${order_detail_list}" var="o">
                                 <tr>
                                     <td class="product-thumbnail">
-                                        <img src="data:image/jpg;base64,${o.product.base64Image}" alt="Image" class="img-fluid"
+                                        <img src="${o.product.imageSource}" alt="Image" class="img-fluid"
                                              onerror="this.onerror=null; this.src='static/images/placeholder.svg';">
                                     </td>
 
@@ -47,11 +47,11 @@
 
                                     <td>${o.product.name}</td>
 
-                                    <td>$${o.price}</td>
+                                    <td>₹${o.price}</td>
 
                                     <td>${o.quantity}</td>
 
-                                    <td>${o.quantity * o.price}</td>
+                                    <td>₹${o.quantity * o.price}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

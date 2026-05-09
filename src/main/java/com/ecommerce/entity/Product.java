@@ -12,15 +12,21 @@ public class Product {
 
     private byte[] image;
     private String base64Image;
+    private String imageUrl;
 
 
     public Product() {
     }
 
     public Product(int id, String name, String base64Image, double price, String description, Category category, Account account, boolean isDeleted, int amount) {
+        this(id, name, base64Image, null, price, description, category, account, isDeleted, amount);
+    }
+
+    public Product(int id, String name, String base64Image, String imageUrl, double price, String description, Category category, Account account, boolean isDeleted, int amount) {
         this.id = id;
         this.name = name;
         this.base64Image = base64Image;
+        this.imageUrl = imageUrl;
         this.price = price;
         this.description = description;
         this.category = category;
@@ -75,6 +81,24 @@ public class Product {
 
     public void setBase64Image(String base64Image) {
         this.base64Image = base64Image;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageSource() {
+        if (base64Image != null && !base64Image.trim().isEmpty()) {
+            return "data:image/jpg;base64," + base64Image;
+        }
+        if (imageUrl != null && !imageUrl.trim().isEmpty()) {
+            return imageUrl;
+        }
+        return "";
     }
 
     public Category getCategory() {

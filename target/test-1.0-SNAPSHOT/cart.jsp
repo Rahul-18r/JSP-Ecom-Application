@@ -29,7 +29,7 @@
                             <tr>
                                 <th class="product-thumbnail">Image</th>
                                 <th class="product-name">Product</th>
-                                <th class="product-price">Price</th>
+                                <th class="product-price">Price (INR)</th>
                                 <th class="product-quantity">Quantity</th>
                                 <th class="product-total">Total</th>
                                 <th class="product-remove">Remove</th>
@@ -40,7 +40,7 @@
                             <c:forEach items="${order.cartProducts}" var="o">
                                 <tr>
                                     <td class="product-thumbnail">
-                                        <img src="data:image/jpg;base64,${o.product.base64Image}" alt="Image"
+                                        <img src="${o.product.imageSource}" alt="Image"
                                              class="img-fluid"
                                              onerror="this.onerror=null; this.src='static/images/placeholder.svg';">
                                     </td>

@@ -30,7 +30,7 @@
                                 <th>Image</th>
                                 <th>ID</th>
                                 <th style="max-width: 120px">Product name</th>
-                                <th>Price</th>
+                                <th>Price (INR)</th>
                                 <th>Category</th>
                                 <th>Total amount</th>
                                 <th>Deleted / Selling</th>
@@ -41,7 +41,7 @@
                             <c:forEach items="${product_list}" var="o">
                                 <tr>
                                     <td class="product-thumbnail">
-                                        <img src="data:image/jpg;base64,${o.base64Image}" alt="Image" class="img-fluid"
+                                        <img src="${o.imageSource}" alt="Image" class="img-fluid"
                                             onerror="this.onerror=null; this.src='static/images/puma-rcb-jersey.png';">
                                     </td>
 
@@ -49,7 +49,7 @@
 
                                     <td>${o.name}</td>
 
-                                    <td>$${o.price}</td>
+                                    <td>₹${o.price}</td>
 
                                     <td>${o.category.name}</td>
 
@@ -134,7 +134,7 @@
                                             <div class="form-group row">
                                                 <div class="col-md-12">
                                                     <label for="product-price" class="text-black">
-                                                        Price <span class="text-danger">*</span>
+                                                        Price (INR) <span class="text-danger">*</span>
                                                     </label>
 
                                                     <input name="product-price" type="number" class="form-control"

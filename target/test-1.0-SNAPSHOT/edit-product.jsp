@@ -65,7 +65,7 @@
                             <div class="form-group row">
                                 <div class="col-md-12">
                                     <label for="price" class="text-black">
-                                        Price <span class="text-danger">*</span>
+                                        Price (INR) <span class="text-danger">*</span>
                                     </label>
 
                                     <input name="product-price" type="number" class="form-control"
@@ -122,7 +122,7 @@
 
                 <div class="col-md-5 ml-auto">
                     <div class="p-3 border">
-                            <img src="data:image/jpg;base64,${product.base64Image}" alt="image" width="100%"
+                            <img src="${product.imageSource}" alt="image" width="100%"
                                 onerror="this.onerror=null; this.src='static/images/puma-rcb-jersey.png';">
                     </div>
                 </div>

@@ -23,7 +23,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <img src="data:image/jpg;base64,${product.base64Image}" alt="Image" class="img-fluid"
+                    <img src="${product.imageSource}" alt="Image" class="img-fluid"
                         onerror="this.onerror=null; this.src='static/images/puma-rcb-jersey.png';">
                 </div>
 
@@ -32,7 +32,7 @@
 
                     <p>${product.description}</p>
 
-                    <p><strong class="text-primary h4">$${product.price}</strong></p>
+                    <p><strong class="text-primary h4">₹${product.price}</strong></p>
 
                     <form action="${pageContext.request.contextPath}/cart" method="get">
                         <div class="mb-3">

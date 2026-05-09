@@ -95,7 +95,7 @@
                                     <thead>
                                     <tr>
                                         <th style="text-align: center">Product</th>
-                                        <th style="text-align: center">Price</th>
+                                        <th style="text-align: center">Price (INR)</th>
                                         <th style="text-align: center">Quantity</th>
                                         <th style="text-align: center">Total</th>
                                     </tr>

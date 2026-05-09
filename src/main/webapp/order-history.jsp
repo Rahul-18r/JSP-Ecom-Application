@@ -38,7 +38,7 @@
                                 <tr>
                                     <td>${o.id}</td>
 
-                                    <td>$${o.total}</td>
+                                    <td>₹${o.total}</td>
 
                                     <td>${o.date}</td>
 

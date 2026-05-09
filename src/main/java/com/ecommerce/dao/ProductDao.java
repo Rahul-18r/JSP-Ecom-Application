@@ -14,6 +14,8 @@ import java.util.Base64;
 import java.util.List;
 
 public class ProductDao {
+    private static final String ONLINE_PRODUCTS_FIRST = " ORDER BY (product_image_url IS NOT NULL AND product_image_url <> '') DESC, product_id ASC";
+
     Connection connection = null;
     PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
@@ -32,17 +34,38 @@ public class ProductDao {
 
     // Method to get blob image from database.
     private String getBase64Image(Blob blob) throws SQLException, IOException {
-        InputStream inputStream = blob.getBinaryStream();
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        byte[] buffer = new byte[4096];
-        int bytesRead = -1;
-
-        while ((bytesRead = inputStream.read(buffer)) != -1) {
-            byteArrayOutputStream.write(buffer, 0, bytesRead);
+        if (blob == null) {
+            return null;
         }
-        byte[] imageBytes = byteArrayOutputStream.toByteArray();
+        try (InputStream inputStream = blob.getBinaryStream();
+             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream()) {
+            byte[] buffer = new byte[4096];
+            int bytesRead;
 
-        return Base64.getEncoder().encodeToString(imageBytes);
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                byteArrayOutputStream.write(buffer, 0, bytesRead);
+            }
+            byte[] imageBytes = byteArrayOutputStream.toByteArray();
+
+            return Base64.getEncoder().encodeToString(imageBytes);
+        }
+    }
+
+    private boolean hasColumn(ResultSet resultSet, String columnName) throws SQLException {
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        for (int i = 1; i <= metaData.getColumnCount(); i++) {
+            if (columnName.equalsIgnoreCase(metaData.getColumnLabel(i))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private String getOptionalString(ResultSet resultSet, String columnName) throws SQLException {
+        if (!hasColumn(resultSet, columnName)) {
+            return null;
+        }
+        return resultSet.getString(columnName);
     }
 
     // Method to execute query to get list products.
@@ -54,20 +77,21 @@ public class ProductDao {
             preparedStatement = connection.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                int id = resultSet.getInt(1);
-                String name = resultSet.getString(2);
-                double price = resultSet.getDouble(4);
-                String description = resultSet.getString(5);
-                Category category = categoryDao.getCategory(resultSet.getInt(6));
-                Account account = accountDao.getAccount(resultSet.getInt(7));
-                boolean isDelete = resultSet.getBoolean(8);
-                int amount = resultSet.getInt(9);
+                int id = resultSet.getInt("product_id");
+                String name = resultSet.getString("product_name");
+                double price = resultSet.getDouble("product_price");
+                String description = resultSet.getString("product_description");
+                Category category = categoryDao.getCategory(resultSet.getInt("fk_category_id"));
+                Account account = accountDao.getAccount(resultSet.getInt("fk_account_id"));
+                boolean isDelete = resultSet.getBoolean("product_is_deleted");
+                int amount = resultSet.getInt("product_amount");
 
                 // Get base64 image to display.
-                Blob blob = resultSet.getBlob(3);
+                Blob blob = resultSet.getBlob("product_image");
                 String base64Image = getBase64Image(blob);
+                String imageUrl = getOptionalString(resultSet, "product_image_url");
 
-                list.add(new Product(id, name, base64Image, price, description, category, account, isDelete, amount));
+                list.add(new Product(id, name, base64Image, imageUrl, price, description, category, account, isDelete, amount));
             }
         } catch (SQLException | ClassNotFoundException | IOException e) {
             System.out.println(e.getMessage());
@@ -77,7 +101,7 @@ public class ProductDao {
 
     // Method to get all products from database.
     public List<Product> getAllProducts() {
-        String query = "SELECT * FROM product WHERE product_is_deleted = false";
+        String query = "SELECT * FROM product WHERE product_is_deleted = false" + ONLINE_PRODUCTS_FIRST;
         return getListProductQuery(query);
     }
 
@@ -91,15 +115,16 @@ public class ProductDao {
             preparedStatement = connection.prepareStatement(query);
             resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                product.setId(resultSet.getInt(1));
-                product.setName(resultSet.getString(2));
-                product.setBase64Image(getBase64Image(resultSet.getBlob(3)));
-                product.setPrice(resultSet.getDouble(4));
-                product.setDescription(resultSet.getString(5));
-                product.setCategory(categoryDao.getCategory(resultSet.getInt(6)));
-                product.setAccount(accountDao.getAccount(resultSet.getInt(7)));
-                product.setDeleted(resultSet.getBoolean(8));
-                product.setAmount(resultSet.getInt(9));
+                product.setId(resultSet.getInt("product_id"));
+                product.setName(resultSet.getString("product_name"));
+                product.setBase64Image(getBase64Image(resultSet.getBlob("product_image")));
+                product.setImageUrl(getOptionalString(resultSet, "product_image_url"));
+                product.setPrice(resultSet.getDouble("product_price"));
+                product.setDescription(resultSet.getString("product_description"));
+                product.setCategory(categoryDao.getCategory(resultSet.getInt("fk_category_id")));
+                product.setAccount(accountDao.getAccount(resultSet.getInt("fk_account_id")));
+                product.setDeleted(resultSet.getBoolean("product_is_deleted"));
+                product.setAmount(resultSet.getInt("product_amount"));
             }
         } catch (SQLException | ClassNotFoundException | IOException e) {
             System.out.println(e.getMessage());
@@ -109,19 +134,19 @@ public class ProductDao {
 
     // Method to get a categories by its id from database.
     public List<Product> getAllCategoryProducts(int category_id) {
-        String query = "SELECT * FROM product WHERE fk_category_id = " + category_id + " AND product_is_deleted = false";
+        String query = "SELECT * FROM product WHERE fk_category_id = " + category_id + " AND product_is_deleted = false" + ONLINE_PRODUCTS_FIRST;
         return getListProductQuery(query);
     }
 
     // Method to search a product by a keyword.
     public List<Product> searchProduct(String keyword) {
-        String query = "SELECT * FROM product WHERE product_name like '%" + keyword + "%' AND product_is_deleted = false";
+        String query = "SELECT * FROM product WHERE product_name like '%" + keyword + "%' AND product_is_deleted = false" + ONLINE_PRODUCTS_FIRST;
         return getListProductQuery(query);
     }
 
     // Method to get all products of a seller.
     public List<Product> getSellerProducts(int sellerId) {
-        String query = "SELECT * FROM product WHERE fk_account_id = " + sellerId;
+        String query = "SELECT * FROM product WHERE fk_account_id = " + sellerId + ONLINE_PRODUCTS_FIRST;
         return getListProductQuery(query);
     }
 
@@ -175,8 +200,8 @@ public class ProductDao {
             preparedStatement.setDouble(3, productPrice);
             preparedStatement.setString(4, productDescription);
             preparedStatement.setInt(5, productCategory);
-            preparedStatement.setInt(6, productId);
-            preparedStatement.setInt(7, productAmount);
+            preparedStatement.setInt(6, productAmount);
+            preparedStatement.setInt(7, productId);
             preparedStatement.executeUpdate();
         } catch (ClassNotFoundException | SQLException e) {
             System.out.println(e.getMessage());
@@ -185,7 +210,7 @@ public class ProductDao {
 
     // Method to get 12 products to display on each page.
     public List<Product> get12ProductsOfPage(int index) {
-        String query = "SELECT * FROM product WHERE product_is_deleted = false LIMIT " + ((index - 1) * 12) + ", 12";
+        String query = "SELECT * FROM product WHERE product_is_deleted = false" + ONLINE_PRODUCTS_FIRST + " LIMIT " + ((index - 1) * 12) + ", 12";
         return getListProductQuery(query);
     }
 

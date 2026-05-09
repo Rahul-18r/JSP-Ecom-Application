@@ -36,7 +36,7 @@
                             <tr>
                                 <th>Product ID</th>
                                 <th>Quantity</th>
-                                <th>Price</th>
+                                <th>Price (INR)</th>
                                 <th>Total</th>
                             </tr>
                             </thead>
@@ -47,9 +47,9 @@
 
                                     <td>${o.quantity}</td>
 
-                                    <td>$${o.price}</td>
+                                    <td>₹${o.price}</td>
 
-                                    <td>$${o.price * o.quantity}</td>
+                                    <td>₹${o.price * o.quantity}</td>
                                 </tr>
                             </c:forEach>
                             </tbody>

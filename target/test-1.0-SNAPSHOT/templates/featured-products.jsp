@@ -15,13 +15,13 @@
                             <div class="block-4 text-center">
                                 <figure class="block-4-image">
                                     <a href="${pageContext.request.contextPath}/product-detail?id=${o.id}">
-                                        <img src="data:image/jpg;base64,${o.base64Image}" alt="Image placeholder" class="img-fluid"
+                                        <img src="${o.imageSource}" alt="Image placeholder" class="img-fluid"
                                             onerror="this.onerror=null; this.src='${pageContext.request.contextPath}/static/images/puma-rcb-jersey.png?v=20260506';">
                                     </a>
                                 </figure>
                                 <div class="block-4-text p-4">
                                     <h3><a href="${pageContext.request.contextPath}/product-detail?id=${o.id}">${o.name}</a></h3>
-                                    <p class="mb-0">$${o.price}</p>
+                                    <p class="mb-0">₹${o.price}</p>
                                 </div>
                             </div>
                         </div>
