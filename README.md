@@ -778,8 +778,7 @@ MIT License. See [LICENSE](LICENSE) for details.
 
 ## 👨‍💼 Authors
 
-- **Rahul** - Current maintainer - [GitHub](https://github.com/Rahul-18r)
-- **Truong Hoang Thuan** - Original author - [GitHub](https://github.com/truonghoangthuan)
+- **Rahul** - Author - [GitHub](https://github.com/Rahul-18r)
 
 ## 📞 Support
 
